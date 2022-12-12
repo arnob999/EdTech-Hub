@@ -5,7 +5,7 @@ function App() {
   console.log("j")
   return (
     <div>
-      console.console.log();
+      <p>Hello</p>
     </div>
   );
 }
