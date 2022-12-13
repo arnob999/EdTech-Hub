@@ -1,15 +1,15 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
 const Courses = () => {
     return (
         <div className='row'>
-            <div className='col-lg-9 col-12"'>
+
+            <div className='col-9'>
                 <LeftSideNav></LeftSideNav>
             </div>
-            <div className='col-lg-3 col-12"'>
+            <div className='col-3 '>
                 <Outlet></Outlet>
             </div>
         </div>

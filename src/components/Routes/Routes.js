@@ -5,6 +5,8 @@ import Home from "../Home/Home";
 import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import Main from "../Main/Main";
 import Notfound from "../NotFound/Notfound";
+import SignIn from "../SignIn/SignIn";
+import SignUp from "../SignUp/SignUp";
 
 export const routes = createBrowserRouter([
     {
@@ -31,6 +33,14 @@ export const routes = createBrowserRouter([
 
                     }
                 ]
+            },
+            {
+                path: "signin",
+                element: <SignIn></SignIn>
+            },
+            {
+                path: "signup",
+                element: <SignUp></SignUp>
             }
 
         ]

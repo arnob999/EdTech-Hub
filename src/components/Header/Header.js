@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import Form from 'react-bootstrap/Form';
 import './Header.css'
 
 function Header() {
@@ -24,6 +25,13 @@ function Header() {
                             <Link className='text-decoration-none p-2 fw-bold text-dark' to="signup">SignUp</Link>
                         </>
                     </Nav>
+                    <Form className='ms-lg-3'>
+                        <Form.Check
+                            type="switch"
+                            id="custom-switch"
+                            label=""
+                        />
+                    </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
