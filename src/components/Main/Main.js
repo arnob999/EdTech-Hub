@@ -9,18 +9,7 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-
-            <Container>
-                <Row>
-                    <Col>
-                        <LeftSideNav></LeftSideNav>
-                    </Col>
-                    <Col>
-                        <Outlet></Outlet>
-                    </Col>
-                </Row>
-            </Container>
-
+            <Outlet></Outlet>
             <Footer></Footer>
         </div>
     );

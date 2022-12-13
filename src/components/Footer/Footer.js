@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='App bg-dark'>
+        <div className='App bg-dark py-4'>
             <small className='text-white'>
 
                 copyright © 2022 || all rights reserved

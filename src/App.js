@@ -1,11 +1,12 @@
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer/Footer';
+import { routes } from './components/Routes/Routes';
 
 function App() {
 
   return (
-    <div>
-      <Footer></Footer>
+    <div className='custom-background'>
+      <RouterProvider router={routes}></RouterProvider>
     </div>
   );
 }
