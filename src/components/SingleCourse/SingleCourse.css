@@ -1,0 +1,8 @@
+.courseImg {
+    width: 250px;
+}
+
+.courseCard {
+    background: rgb(220, 6, 233);
+    background: linear-gradient(353deg, rgba(220, 6, 233, 1) 17%, rgba(98, 66, 203, 1) 78%);
+}

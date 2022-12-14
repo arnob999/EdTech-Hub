@@ -4,13 +4,15 @@ import LeftSideNav from '../LeftSideNav/LeftSideNav';
 
 const Courses = () => {
     return (
-        <div className='row'>
+        <div>
 
-            <div className='col-9'>
-                <LeftSideNav></LeftSideNav>
-            </div>
-            <div className='col-3 '>
-                <Outlet></Outlet>
+            <div className='row'>
+                <div className='col-3'>
+                    <LeftSideNav></LeftSideNav>
+                </div>
+                <div className='col-9'>
+                    <Outlet></Outlet>
+                </div>
             </div>
         </div>
     );

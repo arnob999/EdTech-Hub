@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import AllCourse from "../AllCourse/AllCourse";
 import Blog from "../Blog/Blog";
 import Courses from "../Courses/Courses";
 import Home from "../Home/Home";
-import LeftSideNav from "../LeftSideNav/LeftSideNav";
 import Main from "../Main/Main";
 import Notfound from "../NotFound/Notfound";
 import SignIn from "../SignIn/SignIn";
@@ -18,31 +18,32 @@ export const routes = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'blog',
+                path: '/blog',
                 element: <Blog></Blog>
             },
             {
-                path: "*",
-                element: <Notfound></Notfound>
-            },
-            {
                 path: "courses",
-                element: <LeftSideNav></LeftSideNav>,
+                element: <Courses></Courses>,
                 children: [
                     {
-
+                        path: "/courses",
+                        element: <AllCourse></AllCourse>,
+                        loader: () => fetch("http://localhost:5000/allcourses"),
                     }
                 ]
             },
             {
-                path: "signin",
+                path: "/signin",
                 element: <SignIn></SignIn>
             },
             {
-                path: "signup",
+                path: "/signup",
                 element: <SignUp></SignUp>
+            },
+            {
+                path: "*",
+                element: <Notfound></Notfound>
             }
-
         ]
 
     }

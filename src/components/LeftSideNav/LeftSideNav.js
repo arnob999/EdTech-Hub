@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
 
@@ -10,7 +9,6 @@ const LeftSideNav = () => {
             .then((res) => res.json())
             .then((data) => setCats(data))
     }, [])
-    console.log(cats)
     return (
         <div className='App'>
             <h3 className='fw-bolder'>Category</h3>
