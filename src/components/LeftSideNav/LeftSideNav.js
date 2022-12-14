@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const LeftSideNav = () => {
 
@@ -11,8 +13,8 @@ const LeftSideNav = () => {
     }, [])
     return (
         <div className='App'>
-            <h3 className='fw-bolder'>Category</h3>
-            {cats?.map(cat => <p>{cat.name}</p>)
+            <h3 className='fw-bolder my-4'>Category</h3>
+            {cats?.map(cat => <p><Link to={`category/${cat.id}`} ><Button key={cat.id} className="btn btn-dark">{cat.name}</Button></Link></p>)
             }
         </div >
     );

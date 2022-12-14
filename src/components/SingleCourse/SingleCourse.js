@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import './SingleCourse.css'
 const SingleCourse = ({ course }) => {
-    const { course_id, title, pic, intro, details } = course;
+    const { title, pic, intro, details } = course;
     return (
         <div className='my-5 d-flex courseCard mx-4 rounded-4 text-white'>
             <>
