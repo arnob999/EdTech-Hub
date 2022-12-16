@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './CourseDetailsPage.css'
 const CourseDetailsPage = () => {
     const courseDetail = useLoaderData();
-    const { title, pic, intro, details } = courseDetail[0]
+    const { title, pic, intro, details, course_id } = courseDetail[0]
     return (
         <div className='d-flex justify-content-center flex-column'>
             <img className='imgDetailed my-5 mx-auto' src={pic} alt="" />
@@ -16,9 +16,10 @@ const CourseDetailsPage = () => {
 
             <p className='my-4 w-50 mx-auto'>{details}</p>
 
-            <Button className='my-4 w-50 mx-auto' variant="primary">Get This Premium Course
-                <FontAwesomeIcon icon="fa-solid fa-lock" />
-            </Button>{' '}
+            <Link className='mx-auto w-50' to={`/checkout/${course_id}`}>
+                <Button className='my-4 w-100' variant="primary">Get This Premium Course
+                </Button>{' '}
+            </Link>
 
         </div>
     );

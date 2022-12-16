@@ -97,11 +97,14 @@ const Register = () => {
                             </>} />
                     </Form.Group>
                     <Button disabled={!accepted} variant="primary" type="submit">
-                        Register
-                    </Button><br />
-                    <Form.Text className="text-danger">
-                        {error}
-                    </Form.Text>
+                        Sign Up
+                    </Button>
+                    <>
+
+                        <Form.Text className="text-danger">
+                            {error}
+                        </Form.Text>
+                    </>
                 </Form>
             </div>
         </div>
