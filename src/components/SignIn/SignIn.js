@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -10,13 +10,14 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { signIn, setLoading, providerLogin } = useContext(AuthContext);
+    const { signIn, setLoading, providerLogin, gitHubSignIN } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/'
 
     const provider = new GoogleAuthProvider();
+
 
     const handleGoogleLogin = () => {
         providerLogin(provider)
@@ -29,7 +30,13 @@ const Login = () => {
     }
 
     const handleGithubLogin = () => {
-        console.log("He he Boi")
+        gitHubSignIN()
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setError(true);
+            })
+            .catch((error) => console.error(error.message));
     }
 
     const handleSubmit = event => {

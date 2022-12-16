@@ -14,7 +14,7 @@ const SingleCourse = ({ course }) => {
                 <h4 className='pb-3'>{title}</h4>
                 <h5>{intro}</h5>
                 <p className='text-justify'>{details.slice(0, 250)}...Read More</p>
-                <Link to={`courses/${course_id}`}>
+                <Link to={`/courses/${course_id}`}>
                     <Button variant="primary">Go To Course</Button>
                 </Link>
             </div>

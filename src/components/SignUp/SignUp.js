@@ -1,3 +1,4 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
@@ -8,12 +9,32 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+    const { createUser, updateUserProfile, providerLogin, verifyEmail } = useContext(AuthContext);
 
     const [error, setError] = useState('')
     const [accepted, setAccepted] = useState(false)
 
+    const provider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
+    const handleGoogleLogin = () => {
+        providerLogin(provider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setError(true);
+            })
+            .catch((error) => console.error(error.message));
+    }
 
+    const handleGithubLogin = () => {
+        providerLogin(gitHubProvider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setError(true);
+            })
+            .catch((error) => console.error(error.message));
+    }
 
     const handleAccepted = e => {
         setAccepted(e.target.checked)
@@ -104,6 +125,12 @@ const Register = () => {
                         <Form.Text className="text-danger">
                             {error}
                         </Form.Text>
+                        <p className='text-muted App my-3'>Other Login Method</p>
+                        <div className='d-flex flex-column'>
+                            <Button onClick={handleGoogleLogin} className="my-2" variant="primary">Login With Google</Button>
+
+                            <Button onClick={handleGithubLogin} className="my-2" variant="primary">Login With Github</Button>
+                        </div>
                     </>
                     <p className='my-3'>
                         Already Have an Account on EdTech Hub?
