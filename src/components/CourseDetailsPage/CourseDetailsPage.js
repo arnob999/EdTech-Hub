@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
@@ -15,7 +16,9 @@ const CourseDetailsPage = () => {
 
             <p className='my-4 w-50 mx-auto'>{details}</p>
 
-            <Button className='my-4 w-50 mx-auto' variant="primary">Get This Premium Course</Button>{' '}
+            <Button className='my-4 w-50 mx-auto' variant="primary">Get This Premium Course
+                <FontAwesomeIcon icon="fa-solid fa-lock" />
+            </Button>{' '}
 
         </div>
     );
