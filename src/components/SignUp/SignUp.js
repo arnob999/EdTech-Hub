@@ -105,6 +105,12 @@ const Register = () => {
                             {error}
                         </Form.Text>
                     </>
+                    <p className='my-3'>
+                        Already Have an Account on EdTech Hub?
+                        <Link to={"/signin"}>
+                            Please Login
+                        </Link>
+                    </p>
                 </Form>
             </div>
         </div>

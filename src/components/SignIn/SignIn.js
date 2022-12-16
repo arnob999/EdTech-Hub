@@ -1,19 +1,36 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { toast } from 'react-hot-toast';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { signIn, setLoading } = useContext(AuthContext);
+    const { signIn, setLoading, providerLogin } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/'
+
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleLogin = () => {
+        providerLogin(provider)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                setError(true);
+            })
+            .catch((error) => console.error(error.message));
+    }
+
+    const handleGithubLogin = () => {
+        console.log("He he Boi")
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -69,8 +86,16 @@ const Login = () => {
                     <Form.Text className="text-danger">
                         {error}
                     </Form.Text>
+                    <p className='text-muted App my-3'>Other Login Method</p>
+                    <div className='d-flex flex-column'>
+                        <Button onClick={handleGoogleLogin} className="my-2" variant="primary">Login With Google</Button>
+
+                        <Button onClick={handleGithubLogin} className="my-2" variant="primary">Login With Github</Button>
+                    </div>
+                    <p className='my-3'>New to EdTech Hub? Please <Link to={"/signup"}>SignUp</Link></p>
                 </Form>
             </div>
+
         </div>
     );
 };
