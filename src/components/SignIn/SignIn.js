@@ -1,11 +1,31 @@
-import React from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
-const SignIn = () => {
+function SignIn() {
     return (
-        <div>
-            SIgn IN
+        <div className='d-flex justify-content-center mb-5'>
+
+            <Form className='w-25 py-5 mt-5 mb-5'>
+                <div className='d-flex justify-content-center mb-5'>
+                    <h2>Login</h2>
+                </div>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+
+                <Button variant="primary" type="submit">
+                    Sign In
+                </Button>
+            </Form>
         </div>
     );
-};
+}
 
 export default SignIn;

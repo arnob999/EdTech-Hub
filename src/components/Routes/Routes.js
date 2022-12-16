@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AllCourse from "../AllCourse/AllCourse";
 import Blog from "../Blog/Blog";
+import CourseDetailsPage from "../CourseDetailsPage/CourseDetailsPage";
 import Courses from "../Courses/Courses";
 import Home from "../Home/Home";
 import Main from "../Main/Main";
@@ -25,15 +26,20 @@ export const routes = createBrowserRouter([
                 path: "/courses",
                 element: <Courses></Courses>,
                 children: [
-                    {
+                    {//To show Course Overview At a glance
                         path: "/courses",
                         element: <AllCourse></AllCourse>,
                         loader: () => fetch("http://localhost:5000/allcourses"),
                     },
-                    {
+                    { //Load Category WIse
                         path: '/courses/category/:id',
                         element: <AllCourse></AllCourse>,
                         loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                    },
+                    {//OPen on see details
+                        path: 'courses/:id',
+                        element: <CourseDetailsPage></CourseDetailsPage>,
+                        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
                     }
                 ]
             },
