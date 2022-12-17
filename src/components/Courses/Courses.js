@@ -6,11 +6,11 @@ const Courses = () => {
     return (
         <div>
 
-            <div className='row'>
-                <div className='col-3'>
+            <div className='row '>
+                <div className='col-lg-3 col-12'>
                     <LeftSideNav></LeftSideNav>
                 </div>
-                <div className='col-9'>
+                <div className='col-lg-9 col-12'>
                     <Outlet></Outlet>
                 </div>
             </div>

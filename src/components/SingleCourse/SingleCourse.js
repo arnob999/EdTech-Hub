@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './SingleCourse.css'
 const SingleCourse = ({ course }) => {
     const { course_id, title, pic, intro, details } = course;
-    // console.log(course.)
+
     return (
         <div className='my-5 d-flex courseCard mx-4 rounded-4 text-white'>
             <>

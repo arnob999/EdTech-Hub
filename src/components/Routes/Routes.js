@@ -31,17 +31,17 @@ export const routes = createBrowserRouter([
                     {//To show Course Overview At a glance
                         path: "/courses",
                         element: <AllCourse></AllCourse>,
-                        loader: () => fetch("http://localhost:5000/allcourses"),
+                        loader: () => fetch("https://edtech-hub-server.vercel.app/allcourses"),
                     },
                     { //Load Category WIse
                         path: '/courses/category/:id',
                         element: <AllCourse></AllCourse>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                        loader: ({ params }) => fetch(`https://edtech-hub-server.vercel.app/category/${params.id}`)
                     },
                     {//OPen on see details
                         path: '/courses/:id',
                         element: <CourseDetailsPage></CourseDetailsPage>,
-                        loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                        loader: ({ params }) => fetch(`https://edtech-hub-server.vercel.app/courses/${params.id}`)
                     }
                 ]
             },
@@ -58,7 +58,7 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute>
                     <CheckOut></CheckOut>
                 </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://edtech-hub-server.vercel.app/courses/${params.id}`)
             },
             {
                 path: "*",
