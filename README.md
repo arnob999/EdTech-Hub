@@ -1,7 +1,11 @@
 Live Website:
+https://edtech-hub-5570b.web.app/
 
 Server Side Repo:
 https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-Buggy-ARNOB
+
+Vercel Server Link:
+https://vercel.com/buggy-arnob/edtech-hub-server
 
 Client Side Repo:
 https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Buggy-ARNOB
