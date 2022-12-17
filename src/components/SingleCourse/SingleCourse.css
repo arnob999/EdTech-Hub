@@ -1,5 +1,7 @@
 .courseImg {
     width: 250px;
+    border-radius: 20px;
+    margin-left: 0;
 }
 
 .courseCard {
