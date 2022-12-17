@@ -34,9 +34,9 @@ function Header() {
                         <div>
                             {
                                 user?.uid ?
-                                    <>
-                                        <span>{user?.displayName}</span>
-                                        <Button className='text-decoration-none' variant="light" onClick={handleLogOut}>Log out</Button>
+                                    <><Button className='text-decoration-none mx-1' variant="primary" onClick={handleLogOut}>Log out</Button>
+                                        <span className='text-dark fw-bold m-0 p-0'>{user?.displayName}</span>
+
                                     </>
                                     :
                                     <div className='ms-3'>
